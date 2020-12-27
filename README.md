@@ -27,11 +27,16 @@ Các Tính Năng ES6
 + var hổ trợ cơ chế hoisting, phạm vi hoạt động của biến var trên toàn bộ các scope `({ });`
 
 
-+ let không hỗ trợ cơ chế hoisting, phạm vi hoạt động của biến let trên từng scope phân biệt. Trong cùng 1 scope khai báo trùng tên biến sẽ lập tức báo lỗi
+> + let không hỗ trợ cơ chế hoisting, phạm vi hoạt động của biến let trên từng scope phân biệt. Trong cùng 1 scope khai báo trùng tên biến sẽ lập tức báo lỗi
 Kết luận: Dùng let thay var trong mọi tình huống
-+ const cũng giống như let nhưng không thể gán lại giá trị mới. Đối với kiểu dữ liệu object hoặc array thì không thể gán lại bởi object hoặc array mới mà chỉ có thể thay đổi các giá trị bên trong của đối tượng đó.
+> + const cũng giống như let nhưng không thể gán lại giá trị mới. Đối với kiểu dữ liệu object hoặc array thì không thể gán lại bởi object hoặc array mới mà chỉ có thể thay đổi các giá trị bên trong của đối tượng đó.
 
 ```javascript
+var number = 1;
+var number = 2;
+console.log(number)
+KQ --> 2
+
 let number = 1;
 let number = 2;
 console.log(number)
@@ -43,5 +48,6 @@ let title = 'cybersoft';
     console.log('1',title); 
 }
 console.log('2',title);
-KQ --> 1cyberlearn & 2cybersoft
+
+KQ --> 1 cyberlearn & 2 cybersoft
 ```
