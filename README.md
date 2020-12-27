@@ -29,6 +29,8 @@ Các Tính Năng ES6
 Kết luận: Dùng let thay var trong mọi tình huống
 > + const cũng giống như let nhưng không thể gán lại giá trị mới. Đối với kiểu dữ liệu object hoặc array thì không thể gán lại bởi object hoặc array mới mà chỉ có thể thay đổi các giá trị bên trong của đối tượng đó.
 
+✨ Demo
+
 ```javascript
 var number = 1;
 var number = 2;
