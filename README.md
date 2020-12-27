@@ -22,8 +22,8 @@ Các Tính Năng ES6
 - [binary and octal literals](#binary-and-octal-literals)
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
-## Javascript Cơ chế khai báo biến trong es6
-## Khác biệt giữa var và let: 
+
+> Khác biệt giữa `var` , `let` & `const`: 
 > + var hổ trợ cơ chế hoisting, phạm vi hoạt động của biến var trên toàn bộ các scope `({ });`
 > + let không hỗ trợ cơ chế hoisting, phạm vi hoạt động của biến let trên từng scope phân biệt. Trong cùng 1 scope khai báo trùng tên biến sẽ lập tức báo lỗi
 Kết luận: Dùng let thay var trong mọi tình huống
