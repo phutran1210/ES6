@@ -1,31 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <div class="container">
-        <div id="house" style="width: 100px;height: 100px;">
+    <div class="container mb-5">
+      <div id="house" style="width: 100px; height: 100px"></div>
+      <div id="color"></div>
+      <!--Bài tập rest params-->
+      <hr />
+      <h3>Bài tập rest param</h3>
+      <div class="row">
+        <div class="col-6">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-success text-light" id="basic-addon1">Toán</span>
+            </div>
+            <input
+              type="text"
+              id="diemToan"
+              class="form-control"
+              placeholder="Điểm toán"
+              aria-label="Điểm toán"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-success text-light" id="basic-addon1">Lý</span>
+            </div>
+            <input
+              type="text"
+              id="diemLy"
+              class="form-control"
+              placeholder="Điểm lý"
+              aria-label="Điểm toán"
+              aria-describedby="basic-addon1"
+            />
+          </div>
 
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-success text-light" id="basic-addon1">Hoá</span>
+            </div>
+            <input
+              type="text"
+              id="diemHoa"
+              class="form-control"
+              placeholder="Điểm hoá"
+              aria-label="Điểm toán"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnTinhToanLyHoa">Tính</button>
+          </div>
+          <div style="border: none; background: none" class="form-group text-center">
+            <input class="bg-success text-light text-center" id="diemToanLyHoa" />
+          </div>
         </div>
-        <div id="color">
-        
+        <div class="col-6">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-success text-light" id="basic-addon1">Văn</span>
+            </div>
+            <input
+              type="text"
+              id="diemVan"
+              class="form-control"
+              placeholder="Điểm văn"
+              aria-label="Điểm toán"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-success text-light" id="basic-addon1">Sử</span>
+            </div>
+            <input
+              type="text"
+              id="diemSu"
+              class="form-control"
+              placeholder="Điểm sử"
+              aria-label="Điểm toán"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-success text-light" id="basic-addon1">Địa</span>
+            </div>
+            <input
+              type="text"
+              id="diemDia"
+              class="form-control"
+              placeholder="Điểm địa"
+              aria-label="Điểm toán"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-success text-light" id="basic-addon1">Anh văn</span>
+            </div>
+            <input
+              type="text"
+              id="diemAnhVan"
+              class="form-control"
+              placeholder="Điểm anh văn"
+              aria-label="Điểm toán"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnTinhVanSuDiaAnh">Tính</button>
+          </div>
+          <div style="border: none; background: none" class="form-group text-center">
+            <input class="bg-success text-light text-center" id="diemVanSuDiaAnh" />
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-
     <script src="./index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

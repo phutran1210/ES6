@@ -15,23 +15,23 @@
 let title = 'cybersoft';
 {
     let title = 'cyberlearn';
-    console.log('1',title); 
+    console.log('1', title);
 }
 
-console.log('2',title);
+console.log('2', title);
 
 const domain = 'http://svcy.cybersoft.edu.vn/api/';
 // pi = 5;
 
 
 const sinhVien = {
-    ma:1,
-    ten:'Nguyễn Văn A'
+    ma: 1,
+    ten: 'Nguyễn Văn A'
 }
 
 sinhVien.ma = 2;
 sinhVien.ten = 'Nguyễn Văn B';
-console.log('sinhVien',sinhVien);
+console.log('sinhVien', sinhVien);
 // sinhVien = {
 //     ma:2,
 //     ten:'Nguyễn Văn B'
@@ -39,7 +39,7 @@ console.log('sinhVien',sinhVien);
 
 //---- Function Scope: Phạm vi hoạt động các biến bên trong function bên ngoài không sử dụng được.
 var tenHam = function () {
-    var name = 'Sĩ' ;
+    var name = 'Sĩ';
 }
 // function tenHam () {
 
@@ -57,13 +57,13 @@ showInfo();
 //function es6
 let showInfoES6 = () => {
     console.log('Hello Sĩ!');
-} 
+}
 showInfoES6();
 
-let tinhDiemTB = (dToan,dLy,dHoa) => (dToan+dLy+dHoa)/3;
+let tinhDiemTB = (dToan, dLy, dHoa) => (dToan + dLy + dHoa) / 3;
 
-let dtb = tinhDiemTB(5,6,2);
-console.log('dtb',dtb);
+let dtb = tinhDiemTB(5, 6, 2);
+console.log('dtb', dtb);
 // --------------- Con trỏ this trong js ---------------
 // + Ngữ cảnh mặc định của con trỏ this => trỏ về windown
 // var num =  () => {};
@@ -77,16 +77,16 @@ console.log(this.name);
 // + Con trỏ this trong prototype (class) sẽ trỏ về đối tượng được new từ Prototype đó 
 // + Lưu ý: Những hàm bên trong phương thức của prototype thì nên khai báo = arrow function thay vì là function.
 let hocVien1 = {
-    ma:1,
-    ten:'Nguyễn Văn Tèo',
-    hienThiThongTin : function () {
+    ma: 1,
+    ten: 'Nguyễn Văn Tèo',
+    hienThiThongTin: function () {
         console.log('Mã: ', this.ma);
         console.log('Họ tên: ', this.ten);
     }
 }
 hocVien1.hienThiThongTin();
 // prototype : ứng với lớp đối tượng trong lập trình
-function HocVien () {
+function HocVien() {
     this.ma = '';
     this.ten = '';
     this.hienThiThongTin = function () {
@@ -98,7 +98,7 @@ function HocVien () {
     }
 }
 let hv1 = new HocVien();
-hv1.ma='001';
+hv1.ma = '001';
 hv1.ten = 'Nguyễn Văn Tèo';
 hv1.hienThiThongTin();
 
@@ -123,9 +123,9 @@ hv1.hienThiThongTin();
 //1.2: Định nghĩa click cho các button vừa tạo => thay đổi màu sắc của div#house
 
 //1.2: Trong các lần lặp trỏ đến div#house thay đổi màu 
-const arrColor = ['red','green','black','pink','yellow','silver','blue'];
+const arrColor = ['red', 'green', 'black', 'pink', 'yellow', 'silver', 'blue'];
 //Duyệt mảng màu
-for(let i = 0 ; i<arrColor.length;i++){
+for (let i = 0; i < arrColor.length; i++) {
     //Mỗi lần duyệt lấy ra 1 màu trong mảng
     let sColor = arrColor[i];
     //Tạo 1 button từ màu đó
@@ -145,3 +145,53 @@ for(let i = 0 ; i<arrColor.length;i++){
     document.getElementById('color').appendChild(btnColor);
 
 }
+
+//-------------Default params---------
+//DefaultParam: Là giá trị mặc định của các tham số trên hàm, nếu người dùng không truyền giá trị thì sẽ lấy giá trị mặc định, nếu người dùng truyền giá trị thì sẽ lấy giá trị người dùng truyền vào.
+let getUserInfo = (name = 'khải', age = '15') => {
+    if (age > 0 && age < 30) {
+        console.log(name + ' còn trẻ ! ' + name + ' muốn đi chơi!');
+    }
+}
+
+// getUserInfo('khải',18);
+getUserInfo();
+
+let hienThiThongTin = (hoTen, namSinh = 2000, tuoi = 2020 - namSinh) => {
+    console.log('Họ tên ', hoTen);
+    console.log('Tuổi ', tuoi);
+}
+
+hienThiThongTin('Sĩ'); //Kết quả 20
+
+hienThiThongTin('Phú', 2002, 17); //Kết quả 18
+
+//============Rest params============
+
+
+// var tinhTong = (a,b) => {
+//     console.log('tổng = ',a+b);
+// }
+
+// var tinhTong = (a,b,c) => {
+//     console.log('tổng = ',a+b+c);
+// }
+// + restParams nhận các tham số của hàm được gọi dưới dạng mảng(array)
+let tinhTong = (...thamSo) => {
+    switch (thamSo.length) {
+        case 3: {
+            console.log(thamSo[0] + thamSo[1] + thamSo[2]);
+        }; break;
+        case 2: {
+            console.log('Tổng = ', thamSo[0] + thamSo[1]);
+        }; break
+    }
+}
+
+
+tinhTong(5, 10, 10);//25
+
+tinhTong(10, 20);//30
+
+
+//-------------------- Bài tập --------------
