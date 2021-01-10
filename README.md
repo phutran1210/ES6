@@ -23,7 +23,7 @@ Các Tính Năng ES6
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
-## Function Scope: Phạm vi hoạt động các biến bên trong function bên ngoài không sử dụng được (Ngoài lề)
+## Function Scope: Phạm vi hoạt động các biến bên trong function bên ngoài không sử dụng được (Ngoài lề), `Function Expression` & `Function Declaration`
 `1. Function Expression`
 
 ```javascript
@@ -31,7 +31,8 @@ Function expression là function được khởi tạo bằng phép gán = ; fun
 Trong JS, dấu () để gọi thực thi hàm.
 
 var callName = function() {
-   console.log('Anh khải mụp');
+   name = 'Anh khải mụp';
+   console.log(name);
 }
 callName();
 
@@ -41,12 +42,41 @@ var callName = (function () {
     var name = 'A khải mụp';
     console.log(name);
 })();
+
+-----------------------------------------------------------------
+var callName = (function () {
+    var name = 'A khải mụp';
+})();
+console.log(name);
+Kết quả => không log được giá của biến name vì biến name nằm ngoài phạm vi hoạt động của function scope
 ```
 `Function expression không được hoisting(khác với function declaration giải thích phía dưới)`
+```javascript
+console.log(a); ==> Lỗi vì a chưa được khai báo
+console.log(f); ==> undefined vì f đã được khai báo phía dưới nhưng chưa được hoisting
+f(); ==> Lỗi vì f chưa được hoisting nên không biết f đang là kiểu function
+
+var f = function(){
+  console.log('Hello a khải mụp');
+}
+```
 
 `2. Function Declaration`
 ```javascript
+Function declaration là hàm được khai báo như thông thường, hàm này có tên
+function callName(){
+   console.log('A khải đẹp troai');
+};
+callName();
+```
+`Khác với function expression, function declaration được hoisting:`
+```javascript
+console.log(callName); ==> trả về function callName thay vì undefined vì nó đã được hoisting
+callName(); ==> 'A khải đẹp troai'
 
+function callName(){
+   console.log('A khải đẹp trai');
+}
 ```
 ## ECMAScript 6 Features
 
