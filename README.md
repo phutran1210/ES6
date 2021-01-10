@@ -24,7 +24,8 @@ Các Tính Năng ES6
 - [tail calls](#tail-calls)
 
 ## Function Scope: Phạm vi hoạt động các biến bên trong function bên ngoài không sử dụng được (Ngoài lề)
-## 1. Function Expression
+`1. Function Expression`
+
 ```javascript
 Function expression là function được khởi tạo bằng phép gán = ; function có thể có tên hoặc không có tên.
 Trong JS, dấu () để gọi thực thi hàm.
@@ -41,15 +42,16 @@ var callName = (function () {
     console.log(name);
 })();
 ```
-# Function expression không được hoisting(khác với function declaration giải thích phía dưới)
+`Function expression không được hoisting(khác với function declaration giải thích phía dưới)`
 
-##2. Function Declaration
+`2. Function Declaration`
 ```javascript
 
 ```
 ## ECMAScript 6 Features
 
 ### Variable
+
 ### Khác biệt giữa `var` , `let` & `const`:
 >- `var` hổ trợ cơ chế `hoisting`, phạm vi hoạt động của biến `var` trên toàn bộ các scope `({ });`</p>
 >- `let` không hỗ trợ cơ chế `hoisting`, phạm vi hoạt động của biến `let` trên từng `scope` phân biệt. Trong cùng 1 `scope` khai báo trùng tên biến sẽ lập tức báo lỗi
