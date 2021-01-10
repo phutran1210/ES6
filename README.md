@@ -29,19 +29,21 @@ Các Tính Năng ES6
 ### Khác biệt giữa `var` , `let` & `const`:
 >- `var` hổ trợ cơ chế `hoisting`, phạm vi hoạt động của biến `var` trên toàn bộ các scope `({ });`</p>
 >- `let` không hỗ trợ cơ chế `hoisting`, phạm vi hoạt động của biến `let` trên từng `scope` phân biệt. Trong cùng 1 `scope` khai báo trùng tên biến sẽ lập tức báo lỗi
-Kết luận ==> Dùng let thay var trong mọi tình huống
-> + const cũng giống như let nhưng không thể gán lại giá trị mới. Đối với kiểu dữ liệu object hoặc array thì không thể gán lại bởi object hoặc array mới mà chỉ có thể thay đổi các giá trị bên trong của đối tượng đó.
+</br>Kết luận ==> Dùng `let` thay `var` trong mọi tình huống.
+> + `const` cũng giống như `let` nhưng không thể gán lại giá trị mới. Đối với kiểu dữ liệu `object` hoặc `array` thì không thể gán lại bởi `object` hoặc `array` mới mà chỉ có thể thay đổi các giá trị bên trong của đối tượng đó.
 
 ```javascript
 var number = 1;
+
+==> khai báo lại || Redeclare
 var number = 2;
 console.log(number)
-KQ --> 2
+Trả về kết quả log đc --> 2
 
 let number = 1;
 let number = 2;
 console.log(number)
-KQ --> Identifier 'number' has already been declared || không thể xác định được number vì đã được khai báo
+Báo lỗi --> Identifier 'number' has already been declared || không thể xác định được number vì đã được khai báo
 
 let title = 'cybersoft';
 {
@@ -50,5 +52,7 @@ let title = 'cybersoft';
 }
 console.log('2',title);
 
-KQ --> 1 cyberlearn & 2 cybersoft
+Trả về kết quả log đc -->    1 cyberlearn 
+                             2 cybersoft
+ở đây ta có biến title = 'cybersoft', và tại block scope ta có biến là title = 'cyberlearn' và hai biến này hoàn toàn khác biệt nhau vì title = 'cyberlearn' chỉ sử dụng trong block scope nên sẽ không bị ảnh hưởng giá trị khai báo biến bên ngoài vì đây là hai biến hoàn toàn riêng biệt.
 ```
