@@ -40,10 +40,12 @@ var number = 2;
 console.log(number)
 Trả về kết quả log đc --> 2
 
+
 let number = 1;
 let number = 2;
 console.log(number)
-Báo lỗi --> Identifier 'number' has already been declared || không thể xác định được number vì đã được khai báo
+Báo lỗi --> Identifier 'number' has already been declared
+|| không thể xác định được number vì đã được khai báo
 
 let title = 'cybersoft';
 {
@@ -58,4 +60,32 @@ Trả về kết quả log đc -->    1 cyberlearn
 và hai biến này hoàn toàn khác biệt nhau vì title = 'cyberlearn' 
 chỉ sử dụng trong block scope nên sẽ không bị ảnh hưởng giá trị khai báo biến bên ngoài 
 vì đây là hai biến hoàn toàn riêng biệt.
+
+const domain = 'http://svcy.cybersoft.edu.vn/api/';
+const pi = 3.14;
+pi = 20;
+console.log(pi);
+Báo lỗi ==> Uncaught TypeError: Assignment to constant variable 
+|| ở đây chúng ta không thể gáng biến lại giá trị của hằng số
+
+const sinhVien = {
+    ma: 1,
+    ten: 'Nguyễn Văn A'
+}
+sinhVien = {
+    ma:2,
+    ten:'Nguyễn Văn B'
+}
+console.log('sinhVien', sinhVien);
+Báo lỗi ==> Báo lỗi ==> Uncaught TypeError: Assignment to constant variable 
+|| ở đây chúng ta không thể gáng biến lại giá trị của hằng số
+
+Nhưng ở đây ta có thể gáng lại giá trị của đối tượng bằng cách 
+const sinhVien = {
+    ma: 1,
+    ten: 'Nguyễn Văn A'
+}
+sinhVien.ma = 2;
+sinhVien.ten = 'Nguyễn Văn B';
+console.log('sinhVien', sinhVien);
 ```
