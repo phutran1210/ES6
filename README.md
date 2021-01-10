@@ -52,7 +52,10 @@ let title = 'cybersoft';
 }
 console.log('2',title);
 
-Trả về kết quả log đc -->    1 cyberlearn 
+Trả về kết quả log đc -->    1 cyberlearn
                              2 cybersoft
-ở đây ta có biến title = 'cybersoft', và tại block scope ta có biến là title = 'cyberlearn' và hai biến này hoàn toàn khác biệt nhau vì title = 'cyberlearn' chỉ sử dụng trong block scope nên sẽ không bị ảnh hưởng giá trị khai báo biến bên ngoài vì đây là hai biến hoàn toàn riêng biệt.
+ở đây ta có biến title = 'cybersoft', và tại block scope ta có biến là title = 'cyberlearn'
+và hai biến này hoàn toàn khác biệt nhau vì title = 'cyberlearn' 
+chỉ sử dụng trong block scope nên sẽ không bị ảnh hưởng giá trị khai báo biến bên ngoài 
+vì đây là hai biến hoàn toàn riêng biệt.
 ```
