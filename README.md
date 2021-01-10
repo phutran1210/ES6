@@ -1,7 +1,7 @@
 <h1 align="center">javascript es6 👋</h1>
 
 Các Tính Năng ES6
-- [variables](#variablies)
+- [variables](#variable)
 - [classes](#classes)
 - [enhanced object literals](#enhanced-object-literals)
 - [template strings](#template-strings)
@@ -23,7 +23,9 @@ Các Tính Năng ES6
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
-### Variablies
+## ECMAScript 6 Features
+
+### Variable
 > Khác biệt giữa `var` , `let` & `const`: 
 > + var hổ trợ cơ chế hoisting, phạm vi hoạt động của biến var trên toàn bộ các scope `({ });`
 > + let không hỗ trợ cơ chế hoisting, phạm vi hoạt động của biến let trên từng scope phân biệt. Trong cùng 1 scope khai báo trùng tên biến sẽ lập tức báo lỗi
