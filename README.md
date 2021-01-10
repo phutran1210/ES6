@@ -26,13 +26,13 @@ Các Tính Năng ES6
 ## ECMAScript 6 Features
 
 ### Variable
-> Khác biệt giữa `var` , `let` & `const`: 
-> + var hổ trợ cơ chế hoisting, phạm vi hoạt động của biến var trên toàn bộ các scope `({ });`
-> + let không hỗ trợ cơ chế hoisting, phạm vi hoạt động của biến let trên từng scope phân biệt. Trong cùng 1 scope khai báo trùng tên biến sẽ lập tức báo lỗi
+Khác biệt giữa `var` , `let` & `const`: 
+    - var hổ trợ cơ chế hoisting, phạm vi hoạt động của biến var trên toàn bộ các scope `({ });`
+    - let không hỗ trợ cơ chế hoisting, phạm vi hoạt động của biến let trên từng scope phân biệt. Trong cùng 1 scope khai báo trùng tên biến sẽ lập tức báo lỗi
 Kết luận: Dùng let thay var trong mọi tình huống
 > + const cũng giống như let nhưng không thể gán lại giá trị mới. Đối với kiểu dữ liệu object hoặc array thì không thể gán lại bởi object hoặc array mới mà chỉ có thể thay đổi các giá trị bên trong của đối tượng đó.
 
-✨ Demo
+✨Demo
 
 ```javascript
 var number = 1;
