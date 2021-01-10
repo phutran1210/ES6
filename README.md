@@ -23,6 +23,30 @@ Các Tính Năng ES6
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
+## Function Scope: Phạm vi hoạt động các biến bên trong function bên ngoài không sử dụng được (Ngoài lề)
+## 1. Function Expression
+```javascript
+Function expression là function được khởi tạo bằng phép gán = ; function có thể có tên hoặc không có tên.
+Trong JS, dấu () để gọi thực thi hàm.
+
+var callName = function() {
+   console.log('Anh khải mụp');
+}
+callName();
+
+hoặc 
+Immediately-Invoked Function Expression (IIFE) || Gọi hàm lập tức
+var callName = (function () {
+    var name = 'A khải mụp';
+    console.log(name);
+})();
+```
+# Function expression không được hoisting(khác với function declaration giải thích phía dưới)
+
+##2. Function Declaration
+```javascript
+
+```
 ## ECMAScript 6 Features
 
 ### Variable
