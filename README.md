@@ -2,7 +2,7 @@
 
 Các Tính Năng ES6
 - [variables](#variable)
-- [arrow function](#arrow)
+- [arrow_function](#Arrows_function)
 - [classes](#classes)
 - [enhanced object literals](#enhanced-object-literals)
 - [template strings](#template-strings)
@@ -24,7 +24,7 @@ Các Tính Năng ES6
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
-### Arrows function
+### Arrows_function
 >- Arrow function expression là một biểu thức ngắn gọn và dễ hiểu được giới thiệu ở ES6 để thay thế cho function truyền thống
 >- Tuy nhiên, arrow function cũng có mặt hạn chế: không có `this` và `arguments` của chính mình. Do đó, không nên sử dụng arrow như một `event handler`, `a method of an object`, `a method of a class`, hay `a prototype method` 
 >- Arrow function làm việc rất tốt trong `callbacks` function như `map, filter, reduce,...`
