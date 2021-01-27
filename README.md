@@ -24,121 +24,6 @@ Các Tính Năng ES6
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
-### Arrows_function
->- Arrow function expression là một biểu thức ngắn gọn và dễ hiểu được giới thiệu ở ES6 để thay thế cho function truyền thống
->- Tuy nhiên, arrow function cũng có mặt hạn chế: không có `this` và `arguments` của chính mình. Do đó, không nên sử dụng arrow như một `event handler`, `a method of an object`, `a method of a class`, hay `a prototype method` 
->- Arrow function làm việc rất tốt trong `callbacks` function như `map, filter, reduce,...`
-
-```javascript
-const materials = [
-  'Hydrogen',
-  'Helium',
-  'Lithium',
-  'Beryllium',
-];
-
-console.log(materials.map(material => material.length));
-// expected output: Array [8, 6, 7, 9]
-```
-
-Arrow function không có `this`, nếu bạn cố gắng truy cập vào `this`, nó sẽ sử dụng `this` ở ngữ cảnh (context) bên ngoài của nó.
-```javascript
-const family = {
-  name: 'Stark',
-  member: ['Howard', 'Tony', 'Morgan'],
-
-  showMember() {
-    this.member.forEach(member => console.log(`member ${this.name}`));
-  }
-};
-
-family.showMember(); 
-// Ở hàm forEach, arrow function được sử dụng do đó this.name hoàn toàn giống như family.name ở ngữ cảnh bên ngoài phương thức showMember()
-```
-Arrow function cũng không có `arguments`
-```javascript
-const language = {
-  name: 'Javascript',
-
-  showName: () => { console.log(arguments); },
-};
-
-language.showName();
-//error: Uncaught ReferenceError: arguments is not defined
-```
-Cẩn thận khi return object với arrow nhé !!!
-```javascript
-const person = () => { name: 'Arrow' };
-person(); // undefined 
-
-const person = () => ({ name: 'Arrow' });
-person(); // { name: 'Arrow' } 
-```
-
-
-Đọc thêm: [MDN Arrow function](#https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-
-### Classes
->- Classes  hỗ trợ Object Oriented Programming (OOP)
->- Phân biệt class và object: `object` là một đối tượng, `classes` không phải là object, nó là bản thiết kế để tạo ra `object` , giúp các `object` đi với các thuộc tính `properties` và phương thức `methods` của `object` đó
-
-Bắt đầu với một class siêu đơn giản nhé
-```javascript
-class User {
-    constructor(name, age, emmail){
-        this.name = name;
-        this.age = age;
-        this.email = email;
-    }
-}
-const user1 = new User('Tony Stark', 53, 'tonystark@gmail.com');
-const user2 = new User('Steve Rogers', 93, 'steverogers@gmail.com');
-const user3 = new User('Peter Quill', 38, 'peterquill@gmail.com');
-```
-Constructor method 
->- Được sử dụng để khởi tạo thuộc tính của đối tượng
->- Thực thi tự động khi một đối tượng được khởi tạo hiểu
->- Nếu không defind constructor, javascript sẽ thêm một phương thức khởi tạo trống cho class
-
-Getter và Setter (Encapsulation - Tính đóng gói của OOP)
->- Dữ liệu không nên cho phép truy cập và sửa đổi trực tiếp bên ngoài đối tượng 
->- Do đó, chúng ta sẽ sử dụng `get` và `set` bằng cách định nghĩa phương thức trong class
-
-```javascript
-class Person {
-    constructor(name) {
-        this.name = name;
-    }
-    get name() {
-        return this.name;
-    }
-    set name(val) {
-        this.name = val;
-    }
-}
-let person1 = new Person('Thor Odinson');
-console.log(`Person Name: ${person1.name}`); 
-person1.name = 'Loki Odinson';
-console.log(`Person Name: ${person1.name}`); 
-```
-Kế thừa ( Inheritance )
-```javascript
-class User {
-    constructor(name, age, email){
-        this.name = name;
-        this.age = age;
-        this.email = email;
-    }
-}
-class Teacher extends User {
-    constructor(){
-        super();
-    }
-
-}
-
-```
-Đọc thêm: [MDN Classes](#https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
 ## Function Scope: Phạm vi hoạt động các biến bên trong function bên ngoài không sử dụng được (Ngoài lề), `Function Expression` & `Function Declaration`
 `1. Function Expression`
@@ -262,3 +147,119 @@ sinhVien.ma = 2;
 sinhVien.ten = 'Nguyễn Văn B';
 console.log('sinhVien', sinhVien);
 ```
+
+### Arrows_function
+>- Arrow function expression là một biểu thức ngắn gọn và dễ hiểu được giới thiệu ở ES6 để thay thế cho function truyền thống
+>- Tuy nhiên, arrow function cũng có mặt hạn chế: không có `this` và `arguments` của chính mình. Do đó, không nên sử dụng arrow như một `event handler`, `a method of an object`, `a method of a class`, hay `a prototype method` 
+>- Arrow function làm việc rất tốt trong `callbacks` function như `map, filter, reduce,...`
+
+```javascript
+const materials = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium',
+];
+
+console.log(materials.map(material => material.length));
+// expected output: Array [8, 6, 7, 9]
+```
+
+Arrow function không có `this`, nếu bạn cố gắng truy cập vào `this`, nó sẽ sử dụng `this` ở ngữ cảnh (context) bên ngoài của nó.
+```javascript
+const family = {
+  name: 'Stark',
+  member: ['Howard', 'Tony', 'Morgan'],
+
+  showMember() {
+    this.member.forEach(member => console.log(`member ${this.name}`));
+  }
+};
+
+family.showMember(); 
+// Ở hàm forEach, arrow function được sử dụng do đó this.name hoàn toàn giống như family.name ở ngữ cảnh bên ngoài phương thức showMember()
+```
+Arrow function cũng không có `arguments`
+```javascript
+const language = {
+  name: 'Javascript',
+
+  showName: () => { console.log(arguments); },
+};
+
+language.showName();
+//error: Uncaught ReferenceError: arguments is not defined
+```
+Cẩn thận khi return object với arrow nhé !!!
+```javascript
+const person = () => { name: 'Arrow' };
+person(); // undefined 
+
+const person = () => ({ name: 'Arrow' });
+person(); // { name: 'Arrow' } 
+```
+
+
+Đọc thêm: [MDN Arrow function](#https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+### Classes
+>- Classes  hỗ trợ Object Oriented Programming (OOP)
+>- Phân biệt class và object: `object` là một đối tượng, `classes` không phải là object, nó là bản thiết kế để tạo ra `object` , giúp các `object` đi với các thuộc tính `properties` và phương thức `methods` của `object` đó
+
+Bắt đầu với một class siêu đơn giản nhé
+```javascript
+class User {
+    constructor(name, age, emmail){
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+}
+const user1 = new User('Tony Stark', 53, 'tonystark@gmail.com');
+const user2 = new User('Steve Rogers', 93, 'steverogers@gmail.com');
+const user3 = new User('Peter Quill', 38, 'peterquill@gmail.com');
+```
+Constructor method 
+>- Được sử dụng để khởi tạo thuộc tính của đối tượng
+>- Thực thi tự động khi một đối tượng được khởi tạo hiểu
+>- Nếu không defind constructor, javascript sẽ thêm một phương thức khởi tạo trống cho class
+
+Getter và Setter (Encapsulation - Tính đóng gói của OOP)
+>- Dữ liệu không nên cho phép truy cập và sửa đổi trực tiếp bên ngoài đối tượng 
+>- Do đó, chúng ta sẽ sử dụng `get` và `set` bằng cách định nghĩa phương thức trong class
+
+```javascript
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    get name() {
+        return this.name;
+    }
+    set name(val) {
+        this.name = val;
+    }
+}
+let person1 = new Person('Thor Odinson');
+console.log(`Person Name: ${person1.name}`); 
+person1.name = 'Loki Odinson';
+console.log(`Person Name: ${person1.name}`); 
+```
+Kế thừa ( Inheritance )
+```javascript
+class User {
+    constructor(name, age, email){
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+}
+class Teacher extends User {
+    constructor(){
+        super();
+    }
+
+}
+
+```
+Đọc thêm: [MDN Classes](#https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
